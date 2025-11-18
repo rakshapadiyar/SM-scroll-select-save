@@ -16,13 +16,13 @@ You create two bookmarklets:
 ### 1. **Save Selected**
 Select text → click bookmark → it gets appended to localStorage.
 
-javascript:(function(){const sel=window.getSelection().toString().trim();if(!sel){alert("No text selected!");return;}let saved=localStorage.getItem("saved_fb_text")||"";saved+="\n\n---\n"+sel;localStorage.setItem("saved_fb_text",saved);alert("Saved! Total characters: "+saved.length);})();
+```javascript:(function(){const sel=window.getSelection().toString().trim();if(!sel){alert("No text selected!");return;}let saved=localStorage.getItem("saved_fb_text")||"";saved+="\n\n---\n"+sel;localStorage.setItem("saved_fb_text",saved);alert("Saved! Total characters: "+saved.length);})();```
 
 ### 2. **Show Selected**
 
 Opens a new tab containing everything you’ve saved, including the text selected previously.
 
-javascript:(function(){  const saved = localStorage.getItem("saved_fb_text") || "Nothing saved yet.";  const w = window.open("", "_blank");  w.document.write("<pre>" + saved.replace(/</g,"&lt;") + "</pre>");})();
+```javascript:(function(){  const saved = localStorage.getItem("saved_fb_text") || "Nothing saved yet.";  const w = window.open("", "_blank");  w.document.write("<pre>" + saved.replace(/</g,"&lt;") + "</pre>");})();```
 
 ##  To install
 
